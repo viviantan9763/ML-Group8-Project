@@ -1,0 +1,13 @@
+# Initial installation list. Once EVERYONE verifies it works,
+# choose one environment and run: python -m pip freeze > requirements.txt
+# Commit the resulting pinned versions for all four members.
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+ipykernel
+joblib
+pytest
