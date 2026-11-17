@@ -1,13 +1,26 @@
-# Initial installation list. Once EVERYONE verifies it works,
-# choose one environment and run: python -m pip freeze > requirements.txt
-# Commit the resulting pinned versions for all four members.
+# ML Group Project - Credit Card Default Prediction
+# Dataset: UCI Default of Credit Card Clients (#350)
+# Python: 3.12
+
+# Data processing
 pandas
 numpy
 scipy
+
+# Machine learning
 scikit-learn
+
+# Data visualization
 matplotlib
 seaborn
+
+# Jupyter Notebook
 jupyter
 ipykernel
+
+# Model saving and testing
 joblib
 pytest
+
+# Read UCI Excel (.xls) dataset
+xlrd
