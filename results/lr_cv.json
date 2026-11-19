@@ -1,0 +1,34 @@
+{
+    "model": "lr",
+    "cv_folds": 3,
+    "random_state": 42,
+    "scoring": "f1",
+    "baseline_f1_mean": 0.47125336601165085,
+    "baseline_f1_std": 0.000995133370342354,
+    "tuned_f1_mean": 0.5346859143908457,
+    "tuned_f1_std": 0.013352144346710672,
+    "best_params": {
+        "model__C": 0.1,
+        "model__class_weight": "balanced",
+        "model__solver": "lbfgs"
+    },
+    "search_method": "GridSearchCV",
+    "search_space": {
+        "model__C": [
+            0.001,
+            0.01,
+            0.1,
+            1,
+            10
+        ],
+        "model__solver": [
+            "lbfgs",
+            "liblinear"
+        ],
+        "model__class_weight": [
+            null,
+            "balanced"
+        ]
+    },
+    "elapsed_seconds": 13.9539
+}
