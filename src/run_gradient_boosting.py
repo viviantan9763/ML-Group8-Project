@@ -3,7 +3,7 @@
 Gradient Boosting Baseline, Tuning and Supporting Evaluation
 
 Uses the shared preprocessing pipeline provided by M2.
-The final test set is reserved for M3.
+The final test set is reserved.
 """
 
 import json
@@ -28,7 +28,7 @@ def main():
 
     print("Training data shape:", X_train.shape)
     print("Training target shape:", y_train.shape)
-    print("Final test data reserved for M3.")
+    print("Final test data reserved.")
 
     cv = get_cv()
 
