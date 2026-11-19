@@ -1,0 +1,184 @@
+{
+  "run_id": "1f79107653094c6aa6a83ea11ab26a1f",
+  "type": "tuning",
+  "status": "COMPLETED",
+  "started_at": "2026-11-19T10:12:55.502625+00:00",
+  "ended_at": "2026-11-19T10:19:02.824226+00:00",
+  "dataset_mode": "official",
+  "dataset": {
+    "name": "UCI Default of Credit Card Clients (#350)",
+    "fingerprint": "eccc27da46cc307e54a69d4b457b22ba79987ba6f9e21f38b2b2368b875f5a79",
+    "pipeline": "M2 shared pipeline: one-hot categorical predictors, numeric passthrough, ID excluded",
+    "pipeline_hash": "ab48cfad91465ea04146e984369620958310d485f0f18d7a5812e4210e4ca6e7",
+    "split_id": "5138b7fe5d32154e9cbebc15387073794471db6e1308b9ead684f5124503d89a",
+    "rows": 30000,
+    "columns": 25,
+    "features": 23,
+    "target": "default_next_month",
+    "positive_class": 1,
+    "missing": 0,
+    "train_rows": 24000,
+    "test_rows": 6000,
+    "distribution": {
+      "0": 23364,
+      "1": 6636
+    },
+    "train_distribution": {
+      "0": 18691,
+      "1": 5309
+    },
+    "test_distribution": {
+      "0": 4673,
+      "1": 1327
+    }
+  },
+  "cv_protocol": {
+    "folds": 3,
+    "shuffle": true,
+    "seed": 42,
+    "primary": "f1",
+    "secondary": [
+      "precision",
+      "recall",
+      "roc_auc",
+      "average_precision",
+      "accuracy"
+    ]
+  },
+  "rf_params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0001,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": 24,
+    "max_features": 0.2,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 16,
+    "min_samples_split": 10,
+    "n_estimators": 500,
+    "n_jobs": 1,
+    "oob_score": false,
+    "random_state": 42
+  },
+  "winning_draw": 16,
+  "cv_summary": {
+    "f1": {
+      "mean": 0.46936320727182473,
+      "std": 0.0058167612269176515
+    },
+    "precision": {
+      "mean": 0.6812357085112941,
+      "std": 0.009364803117853477
+    },
+    "recall": {
+      "mean": 0.35807051554337677,
+      "std": 0.006102606679337441
+    },
+    "roc_auc": {
+      "mean": 0.7856841665699298,
+      "std": 0.004038145451203258
+    },
+    "average_precision": {
+      "mean": 0.5564121610418696,
+      "std": 0.008503836188147618
+    },
+    "accuracy": {
+      "mean": 0.8209166666666666,
+      "std": 0.0018152517425660205
+    }
+  },
+  "train_cv": {
+    "f1": {
+      "mean": 0.5189019884442793,
+      "std": 0.009781327543269583
+    },
+    "precision": {
+      "mean": 0.7485746031731214,
+      "std": 0.0023326410144619194
+    },
+    "recall": {
+      "mean": 0.39715720816577615,
+      "std": 0.010803913051126312
+    },
+    "roc_auc": {
+      "mean": 0.8806632350463799,
+      "std": 0.002372553528221
+    },
+    "average_precision": {
+      "mean": 0.6997573911291921,
+      "std": 0.003374688182802243
+    },
+    "accuracy": {
+      "mean": 0.8371458333333335,
+      "std": 0.0019394031871228254
+    }
+  },
+  "overfit_gap": {
+    "f1": 0.04953878117245453,
+    "precision": 0.0673388946618273,
+    "recall": 0.03908669262239939,
+    "roc_auc": 0.0949790684764501,
+    "average_precision": 0.14334523008732247,
+    "accuracy": 0.01622916666666685
+  },
+  "oof_metrics": {
+    "accuracy": 0.8209166666666666,
+    "precision": 0.6811178788964529,
+    "recall": 0.3580711998493125,
+    "f1": 0.4693827160493827,
+    "roc_auc": 0.785594263595457,
+    "average_precision": 0.5555729194798089,
+    "balanced_accuracy": 0.6552273499647825,
+    "mcc": 0.4019581660502915,
+    "brier": 0.1337128791571305,
+    "log_loss": 0.42619343055446013,
+    "confusion_matrix": [
+      [
+        17801,
+        890
+      ],
+      [
+        3408,
+        1901
+      ]
+    ]
+  },
+  "oof_threshold": {
+    "best_threshold": 0.26369254542142573,
+    "best_f1": 0.5467713787085515,
+    "precision": 0.5093480734839864,
+    "recall": 0.5901299679789037,
+    "mcc": 0.4075282215259207,
+    "balanced_accuracy": 0.7143309408670935,
+    "default_0_5_f1": 0.4693827160493827,
+    "f1_gain_over_0_5": 0.07738866265916883
+  },
+  "tree_audit": {
+    "mean_tree_depth": 20.108,
+    "median_tree_depth": 20.0,
+    "max_tree_depth": 24,
+    "mean_tree_leaves": 238.016,
+    "total_nodes": 237516,
+    "singleton_leaf_fraction": 0.0,
+    "small_leaf_fraction": 0.0
+  },
+  "oob_metrics": null,
+  "kb_audit": {
+    "primary_train_cv_gap": 0.04953878117245453,
+    "overfit_warning": false,
+    "calibration_warning": false,
+    "threshold_opportunity": true,
+    "notes": [
+      "Threshold opportunity: OOF optimal threshold 0.264 achieves F1=0.5468 (+7.74 pp vs default 0.500 cutoff)."
+    ]
+  },
+  "runtime_seconds": 367.3082714999982,
+  "versions": {
+    "python": "3.12.10",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.1"
+  },
+  "run_folder": "C:\\Users\\drago\\Documents\\random forest\\ML-Group8-Project\\m3_workspace\\runs\\official\\1f79107653094c6aa6a83ea11ab26a1f"
+}

@@ -1,0 +1,184 @@
+{
+  "run_id": "22f3bfb88506414b9b279b6573b6dea9",
+  "type": "tuning",
+  "status": "COMPLETED",
+  "started_at": "2026-11-19T10:33:54.472385+00:00",
+  "ended_at": "2026-11-19T10:36:46.423211+00:00",
+  "dataset_mode": "official",
+  "dataset": {
+    "name": "UCI Default of Credit Card Clients (#350)",
+    "fingerprint": "eccc27da46cc307e54a69d4b457b22ba79987ba6f9e21f38b2b2368b875f5a79",
+    "pipeline": "M2 shared pipeline: one-hot categorical predictors, numeric passthrough, ID excluded",
+    "pipeline_hash": "ab48cfad91465ea04146e984369620958310d485f0f18d7a5812e4210e4ca6e7",
+    "split_id": "5138b7fe5d32154e9cbebc15387073794471db6e1308b9ead684f5124503d89a",
+    "rows": 30000,
+    "columns": 25,
+    "features": 23,
+    "target": "default_next_month",
+    "positive_class": 1,
+    "missing": 0,
+    "train_rows": 24000,
+    "test_rows": 6000,
+    "distribution": {
+      "0": 23364,
+      "1": 6636
+    },
+    "train_distribution": {
+      "0": 18691,
+      "1": 5309
+    },
+    "test_distribution": {
+      "0": 4673,
+      "1": 1327
+    }
+  },
+  "cv_protocol": {
+    "folds": 3,
+    "shuffle": true,
+    "seed": 42,
+    "primary": "f1",
+    "secondary": [
+      "precision",
+      "recall",
+      "roc_auc",
+      "average_precision",
+      "accuracy"
+    ]
+  },
+  "rf_params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": 24,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": 0.8,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 24,
+    "min_samples_split": 2,
+    "n_estimators": 400,
+    "n_jobs": 1,
+    "oob_score": false,
+    "random_state": 42
+  },
+  "winning_draw": 10,
+  "cv_summary": {
+    "f1": {
+      "mean": 0.5465034855825411,
+      "std": 0.0065274423718965704
+    },
+    "precision": {
+      "mean": 0.49529737122946665,
+      "std": 0.007165948681023873
+    },
+    "recall": {
+      "mean": 0.609531702612156,
+      "std": 0.005542163075479511
+    },
+    "roc_auc": {
+      "mean": 0.7841804529064934,
+      "std": 0.004064069704656766
+    },
+    "average_precision": {
+      "mean": 0.5504363423683533,
+      "std": 0.010773942141530227
+    },
+    "accuracy": {
+      "mean": 0.7762083333333334,
+      "std": 0.003934798455942685
+    }
+  },
+  "train_cv": {
+    "f1": {
+      "mean": 0.5915507695483485,
+      "std": 0.0021281862223196876
+    },
+    "precision": {
+      "mean": 0.534825638342925,
+      "std": 0.00393965810975575
+    },
+    "recall": {
+      "mean": 0.6618001776279275,
+      "std": 0.00503192606511973
+    },
+    "roc_auc": {
+      "mean": 0.8539038198548532,
+      "std": 0.0017882561105054835
+    },
+    "average_precision": {
+      "mean": 0.6358296657775361,
+      "std": 0.0018820014132790623
+    },
+    "accuracy": {
+      "mean": 0.7978333333333333,
+      "std": 0.0019805915923166895
+    }
+  },
+  "overfit_gap": {
+    "f1": 0.04504728396580737,
+    "precision": 0.039528267113458304,
+    "recall": 0.05226847501577159,
+    "roc_auc": 0.06972336694835979,
+    "average_precision": 0.08539332340918282,
+    "accuracy": 0.021624999999999894
+  },
+  "oof_metrics": {
+    "accuracy": 0.7762083333333333,
+    "precision": 0.4952555861646771,
+    "recall": 0.6095309851196082,
+    "f1": 0.5464831546060964,
+    "roc_auc": 0.7841035578983518,
+    "average_precision": 0.5488795551565052,
+    "balanced_accuracy": 0.7165412134950135,
+    "mcc": 0.4038377377125037,
+    "brier": 0.17260185902384964,
+    "log_loss": 0.5271143848673245,
+    "confusion_matrix": [
+      [
+        15393,
+        3298
+      ],
+      [
+        2073,
+        3236
+      ]
+    ]
+  },
+  "oof_threshold": {
+    "best_threshold": 0.5181670209571007,
+    "best_f1": 0.5499564080209242,
+    "precision": 0.5119298815127414,
+    "recall": 0.5940855151629308,
+    "mcc": 0.41162920915558343,
+    "balanced_accuracy": 0.716602973728274,
+    "default_0_5_f1": 0.5464831546060964,
+    "f1_gain_over_0_5": 0.003473253414827737
+  },
+  "tree_audit": {
+    "mean_tree_depth": 20.2625,
+    "median_tree_depth": 20.0,
+    "max_tree_depth": 24,
+    "mean_tree_leaves": 320.6325,
+    "total_nodes": 256106,
+    "singleton_leaf_fraction": 0.0,
+    "small_leaf_fraction": 0.0
+  },
+  "oob_metrics": null,
+  "kb_audit": {
+    "primary_train_cv_gap": 0.04504728396580737,
+    "overfit_warning": false,
+    "calibration_warning": true,
+    "threshold_opportunity": false,
+    "notes": [
+      "class_weight='balanced_subsample' boosts default-0.5 F1/recall but inflates predicted probabilities (OOF Brier=0.1726). Before M1 soft-voting ensemble, calibrate probabilities or tune threshold on unweighted RF."
+    ]
+  },
+  "runtime_seconds": 171.93750349999755,
+  "versions": {
+    "python": "3.12.10",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.1"
+  },
+  "run_folder": "C:\\Users\\drago\\Documents\\random forest\\ML-Group8-Project\\m3_workspace\\runs\\official\\22f3bfb88506414b9b279b6573b6dea9"
+}

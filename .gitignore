@@ -9,3 +9,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 artifacts/*.joblib
+results/rf_gui_runs/
+m3_workspace/runs/
+m3_workspace/final_protocol.json
