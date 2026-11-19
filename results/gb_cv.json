@@ -1,0 +1,75 @@
+{
+    "model": "gb",
+    "cv_folds": 3,
+    "random_state": 42,
+    "scoring": "f1",
+    "baseline_f1_mean": 0.47569587671142055,
+    "baseline_f1_std": 0.004842988749541104,
+    "tuned_f1_mean": 0.47906127660781933,
+    "tuned_f1_std": 0.0073701852999119855,
+    "best_params": {
+        "model__subsample": 0.8,
+        "model__n_estimators": 200,
+        "model__min_samples_split": 10,
+        "model__min_samples_leaf": 2,
+        "model__max_depth": 3,
+        "model__learning_rate": 0.05
+    },
+    "search_method": "RandomizedSearchCV",
+    "search_space": {
+        "model__n_estimators": [
+            100,
+            150,
+            200
+        ],
+        "model__learning_rate": [
+            0.03,
+            0.05,
+            0.1
+        ],
+        "model__max_depth": [
+            2,
+            3
+        ],
+        "model__min_samples_split": [
+            2,
+            5,
+            10
+        ],
+        "model__min_samples_leaf": [
+            1,
+            2,
+            5
+        ],
+        "model__subsample": [
+            0.8,
+            1.0
+        ]
+    },
+    "n_iter": 12,
+    "train_f1_mean": 0.5008386971850617,
+    "train_f1_std": 0.004035963019559409,
+    "validation_f1_mean": 0.47906127660781933,
+    "validation_f1_std": 0.0073701852999119855,
+    "train_precision_mean": 0.7115886074761494,
+    "train_precision_std": 0.002014992595525685,
+    "validation_precision_mean": 0.6807798270267412,
+    "validation_precision_std": 0.010373547308515354,
+    "train_recall_mean": 0.38641987133948374,
+    "train_recall_std": 0.004709163147982117,
+    "validation_recall_mean": 0.36956125530825407,
+    "validation_recall_std": 0.005787693067115651,
+    "train_roc_auc_mean": 0.8142032021097853,
+    "train_roc_auc_std": 0.0033493389700853028,
+    "validation_roc_auc_mean": 0.7822457209388364,
+    "validation_roc_auc_std": 0.004607659124780026,
+    "train_pr_auc_mean": 0.6140931386295763,
+    "train_pr_auc_std": 0.0033743991163372998,
+    "validation_pr_auc_mean": 0.5570595290234466,
+    "validation_pr_auc_std": 0.006020557101760601,
+    "f1_train_validation_gap": 0.021777420577242357,
+    "mean_fit_time_seconds": 11.57761001586914,
+    "mean_score_time_seconds": 0.0646062692006429,
+    "supporting_evaluation_seconds": 35.27,
+    "elapsed_seconds": 318.23
+}
