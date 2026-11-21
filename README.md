@@ -1,70 +1,113 @@
-# ML Group Project — V3
+to a public repository. Original dataset is CC BY 4.0: attribute its creators and UCI source in the report/README.
+=======
+# Credit Card Default Prediction — Machine Learning Group Project
 
-6001CMD: Online Shoppers Purchasing Intention (UCI #468). Deadline 22 Nov 2026.
+## Project Overview
 
-## Team
-- M1: EDA + Ensemble
-- M2: Shared Preprocessing + Logistic Regression
-- M3: Random Forest + Final Evaluation
-- M4: Gradient Boosting + Explainability
+This project focuses on predicting credit card payment defaults using machine learning techniques. The objective is to develop, optimise, and compare different classification models to identify customers who may default on their next credit card payment.
 
-## Ground rules
-- `Revenue` is target (purchase=1); tentative 16 predictors excluding `PageValues` (document rationale).
-- Shared 80/20 stratified split with random_state=42; 3-fold shuffled StratifiedKFold with random_state=42.
-- Select models by positive-class F1 on TRAINING CV only. Keep final test set untouched until M3 final evaluation.
-- Share one set of preprocessing functions from M2; use sklearn Pipeline (fitted within each CV fold).
-- Handoffs require real code, numerical evidence and a successful receiver test.
+The project uses the **UCI Default of Credit Card Clients Dataset (#350)**, containing 30,000 customer records and 23 predictive features related to demographics, credit limits, repayment history, billing amounts, and previous payments.
 
-## Getting started (Windows, VS Code terminal)
-1. Use Python 3.12 (choose same Python minor version for team). Install VS Code Python and Jupyter extensions.
-2. In the repository folder:
-   ```powershell
-   py -3.12 -m venv .venv
-   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-   .\.venv\Scripts\python.exe -c "import pandas, sklearn; print('OK', pandas.__version__, sklearn.__version__)"
-   ```
-3. Download `online_shoppers_intention.csv` from https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset and put at `data/raw/online_shoppers_intention.csv`.
-4. M1 runs:
-   ```powershell
-   .\.venv\Scripts\python.exe -m src.data_audit
-   ```
-   Outputs `results/data_audit.csv` and `results/revenue_distribution.csv`.
-5. Once the install and import check work for the whole team, pin packages (one chosen verified environment):
-   ```powershell
-   .\.venv\Scripts\python.exe -m pip freeze > requirements.txt
-   ```
-   Commit pinned `requirements.txt`; everyone else should then recreate/sync their environment using `pip install -r requirements.txt`.
+Three machine learning models are implemented:
 
-## Ownership / handoffs
-- M1 -> M2: data audit + findings; M2 -> ALL: preprocessing.py; M2/M3/M4 -> M1: 3 model factories + CV JSONs; M1 -> M3: ensemble.py; M3 -> M4: final metrics/predictions + frozen model; M4 -> all: explanations/report.
+- Logistic Regression
+- Random Forest
+- Gradient Boosting
 
-## Random forest experiment
+The models are evaluated and optimised using cross-validation and hyperparameter tuning. The two best-performing models are then selected to construct an ensemble model and compared against the individual models.
 
-The current implementation uses the checked-in **UCI Credit Card Default** data and the [shared preprocessing contract](results/preprocessing_contract.md). Run from the repository root after installing the requirements.
+## Team Responsibilities
 
-```powershell
-.\.venv\Scripts\python.exe -m src.random_forest
-```
+| Member | Responsibilities |
+|---|---|
+| M1 | Exploratory Data Analysis (EDA) and Ensemble Learning |
+| M2 | Shared Data Preprocessing and Logistic Regression |
+| M3 | Random Forest and Final Model Evaluation |
+| M4 | Gradient Boosting, Model Interpretation and Recommendations |
 
-The pipeline one-hot encodes the categorical predictors and passes numeric predictors through. It fits preprocessing within each of the three training folds. The experiment compares a default forest with 48 randomly sampled configurations on the same folds, selects by mean positive-class F1, and refits the winner on all 24,000 training rows. The held-out test split is reserved for final evaluation.
+## Dataset
 
-- `results/random_forest_cv.json` records the baseline and tuned fold scores, their mean and standard deviation, and the selected parameters.
-- `results/random_forest_search.csv` ranks all sampled settings by mean F1 and includes secondary metrics and fit times.
-- `artifacts/random_forest.joblib` holds the fitted preprocessing and classifier. Pass the original predictor columns from `split_data()` when making predictions.
-- `src.random_forest.make_random_forest(**params)` builds a fresh pipeline for the ensemble. Pass the `selected_params` object from the CV summary.
+- **Source:** [UCI Machine Learning Repository — Default of Credit Card Clients](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients)
+- **Dataset File:** `data/raw/credit_default.csv`
+- **Records:** 30,000
+- **Predictive Features:** 23
+- **Target:** `default_next_month`
+- **Target Values:** 1 = Default, 0 = Non-default
 
-For a quick smoke run, use `--n-iter 2 --output-dir results/rf_smoke --model-path artifacts/rf_smoke.joblib` to keep its outputs separate. Use `--jobs 1` for serial execution or `--jobs -1` to allow all available cores.
+## Machine Learning Workflow
 
-### Tuning evidence GUI
+1. **Data Audit and EDA** — Investigate data quality, feature distributions, correlations, outliers, and class imbalance.
+2. **Data Preprocessing** — Prepare numerical and categorical features using a shared preprocessing pipeline.
+3. **Base Model Development** — Train Logistic Regression, Random Forest, and Gradient Boosting models.
+4. **Hyperparameter Optimisation** — Optimise each model using cross-validation.
+5. **Ensemble Learning** — Select the two best-performing models and combine their predictions.
+6. **Final Evaluation** — Compare the three base models and the ensemble using classification metrics.
+7. **Model Interpretation** — Analyse model performance, important features, limitations, and practical suitability.
 
-For the full Streamlit studio with configurable baseline and search, evaluation dashboards, comparison, history, and exports, see the [Random Forest Builder guide](m3_workspace/README.md).
+## Shared Technical Configuration
 
-```powershell
-.\.venv\Scripts\python.exe -m src.random_forest_gui
-```
+To ensure consistency across all models, the project follows a common experimental setup:
 
-The GUI opens the saved CV evidence from `results`. Choose **Replay saved scores** to animate the original draw order and see how the best F1 improved. Select a ranked row to inspect all seven settings and its three fold scores. **Search space** lists the values available to the sampler and compares baseline and tuned CV metrics.
+- **Train/Test Split:** 80% / 20%, stratified
+- **Random State:** 42
+- **Cross-validation:** 3-Fold StratifiedKFold
+- **Primary Selection Metric:** Positive-class F1-score
+- **Preprocessing:** Shared Scikit-learn Pipeline
+- **Final Test Set:** Reserved for final evaluation
 
-Choose **Run search** to train again and watch fold scores arrive in the live fit log. The default is 48 candidates. Use 2 candidates for a shorter live demonstration. New runs save their CSV, JSON, and fitted pipeline in a timestamped folder under `results/rf_gui_runs`.
+All models use the same training and testing partitions. Model selection and hyperparameter optimisation are performed using training data only to reduce the risk of data leakage.
 
-Do not upload the university assessment brief to a public repository. Original dataset is CC BY 4.0: attribute its creators and UCI source in the report/README.
+## Project Structure
+
+| Folder / File | Description |
+|---|---|
+| `data/raw/` | Original dataset |
+| `data/processed/` | Cleaned dataset |
+| `notebooks/` | Jupyter Notebooks for analysis and experiments |
+| `src/` | Python source code for preprocessing, modelling and evaluation |
+| `figures/` | EDA and evaluation visualisations |
+| `results/` | Data audit, cross-validation results and model performance metrics |
+| `report/` | Project report and related documents |
+| `requirements.txt` | Python dependencies |
+| `README.md` | Project overview and setup instructions |
+
+## Getting Started
+
+**1. Clone the repository**
+
+Clone this GitHub repository and open the project folder in VS Code.
+
+**2. Set up a Python environment**
+
+Create or select a Python virtual environment and install the dependencies:
+
+`python -m pip install -r requirements.txt`
+
+**3. Verify shared preprocessing**
+
+From the project root, run:
+
+`python -m src.test_preprocessing`
+
+This checks the compatibility of the shared preprocessing pipeline with Logistic Regression, Random Forest, and Gradient Boosting.
+
+**4. Run the analysis and models**
+
+The EDA Notebook is located in `notebooks/`. Model development and evaluation scripts are maintained in `src/`.
+
+Use the project Python environment and run the relevant scripts as they become available.
+
+## Technologies Used
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Matplotlib
+- Jupyter Notebook
+- Git and GitHub
+
+## References
+
+Yeh, I. (2009). *Default of credit card clients* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C55S3H
+
+Yeh, I. C., & Lien, C. H. (2009). The comparisons of data mining techniques for the predictive accuracy of probability of default of credit card clients. *Expert Systems with Applications, 36*(2), 2473–2480. https://doi.org/10.1016/j.eswa.2007.12.020

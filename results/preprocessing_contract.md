@@ -1,7 +1,5 @@
 
-# Shared Preprocessing Contract — ML Group 8
-
-## 1. Dataset
+# Shared Preprocessing Contract — ML Group ## 1. Dataset
 
 - Dataset: UCI Default of Credit Card Clients (#350)
 - Input file: data/raw/credit_default.csv
@@ -215,5 +213,3 @@ Owner: M2
 Local integration testing: Passed
 
 Receivers: M1, M3, M4
-
-Receiver verification and team approval: Pending
