@@ -1,0 +1,4 @@
+model,tuned_cv_f1_mean,tuned_cv_f1_std,source
+RF,0.5493573105890883,0.006808044834799462,rf_ensemble_handoff.json
+GB (balanced),0.5397330315206658,0.004958897535307046,gb_balanced_cv.json
+LR,0.5346859143908457,0.013352144346710672,lr_cv.json

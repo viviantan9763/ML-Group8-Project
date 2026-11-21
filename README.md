@@ -1,3 +1,5 @@
+to a public repository. Original dataset is CC BY 4.0: attribute its creators and UCI source in the report/README.
+=======
 # Credit Card Default Prediction — Machine Learning Group Project
 
 ## Project Overview

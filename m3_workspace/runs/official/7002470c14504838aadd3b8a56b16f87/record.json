@@ -1,0 +1,308 @@
+{
+  "id": "7002470c14504838aadd3b8a56b16f87",
+  "config": {
+    "dataset": "official",
+    "model": {
+      "n_estimators": 100,
+      "criterion": "gini",
+      "max_depth": null,
+      "min_samples_split": 2,
+      "min_samples_leaf": 1,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "bootstrap": true,
+      "oob_score": false,
+      "class_weight": null,
+      "max_samples": null,
+      "ccp_alpha": 0.0,
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "cv": {
+      "folds": 3,
+      "shuffle": true,
+      "seed": 42,
+      "primary": "f1",
+      "secondary": [
+        "precision",
+        "recall",
+        "roc_auc",
+        "average_precision",
+        "accuracy"
+      ]
+    },
+    "fit_limit": 350,
+    "search": {
+      "space": {
+        "n_estimators": [
+          400
+        ],
+        "max_depth": [
+          15,
+          null
+        ],
+        "min_samples_leaf": [
+          4,
+          8,
+          12,
+          16,
+          24
+        ],
+        "max_features": [
+          "sqrt",
+          0.2,
+          0.25,
+          0.35,
+          0.5
+        ],
+        "class_weight": [
+          null,
+          "balanced",
+          "balanced_subsample"
+        ],
+        "max_samples": [
+          0.55,
+          0.65,
+          0.8,
+          null
+        ],
+        "ccp_alpha": [
+          0.0,
+          0.0001,
+          0.0005
+        ]
+      },
+      "iterations": 30,
+      "method": "random",
+      "jobs": 32,
+      "verbosity": 10,
+      "seed": 42,
+      "errors": "raise",
+      "refit": "primary"
+    },
+    "dataset_snapshot": {
+      "name": "UCI Default of Credit Card Clients (#350)",
+      "fingerprint": "eccc27da46cc307e54a69d4b457b22ba79987ba6f9e21f38b2b2368b875f5a79",
+      "pipeline": "M2 shared pipeline: one-hot categorical predictors, numeric passthrough, ID excluded",
+      "pipeline_hash": "ab48cfad91465ea04146e984369620958310d485f0f18d7a5812e4210e4ca6e7",
+      "split_id": "5138b7fe5d32154e9cbebc15387073794471db6e1308b9ead684f5124503d89a",
+      "rows": 30000,
+      "columns": 25,
+      "features": 23,
+      "target": "default_next_month",
+      "positive_class": 1,
+      "missing": 0,
+      "train_rows": 24000,
+      "test_rows": 6000,
+      "distribution": {
+        "0": 23364,
+        "1": 6636
+      },
+      "train_distribution": {
+        "0": 18691,
+        "1": 5309
+      },
+      "test_distribution": {
+        "0": 4673,
+        "1": 1327
+      }
+    }
+  },
+  "type": "tuning",
+  "status": "COMPLETED",
+  "started_at": "2026-11-19T10:37:20.581512+00:00",
+  "ended_at": "2026-11-19T10:40:05.333245+00:00",
+  "summary": {
+    "dataset": {
+      "name": "UCI Default of Credit Card Clients (#350)",
+      "fingerprint": "eccc27da46cc307e54a69d4b457b22ba79987ba6f9e21f38b2b2368b875f5a79",
+      "pipeline": "M2 shared pipeline: one-hot categorical predictors, numeric passthrough, ID excluded",
+      "pipeline_hash": "ab48cfad91465ea04146e984369620958310d485f0f18d7a5812e4210e4ca6e7",
+      "split_id": "5138b7fe5d32154e9cbebc15387073794471db6e1308b9ead684f5124503d89a",
+      "rows": 30000,
+      "columns": 25,
+      "features": 23,
+      "target": "default_next_month",
+      "positive_class": 1,
+      "missing": 0,
+      "train_rows": 24000,
+      "test_rows": 6000,
+      "distribution": {
+        "0": 23364,
+        "1": 6636
+      },
+      "train_distribution": {
+        "0": 18691,
+        "1": 5309
+      },
+      "test_distribution": {
+        "0": 4673,
+        "1": 1327
+      }
+    },
+    "cost": {
+      "candidates": 30,
+      "space_size": 1800,
+      "fits": 94,
+      "workers": 32
+    },
+    "best_params": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced_subsample",
+      "criterion": "gini",
+      "max_depth": 15,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": 0.65,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 24,
+      "min_samples_split": 2,
+      "n_estimators": 400,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 42
+    },
+    "winning_draw": 17,
+    "metrics": {
+      "accuracy": 0.7767083333333333,
+      "precision": 0.49616329036218537,
+      "recall": 0.6089659069504615,
+      "f1": 0.5468076109936575,
+      "roc_auc": 0.7838066633512216,
+      "average_precision": 0.5476734246395236,
+      "balanced_accuracy": 0.7166599370502134,
+      "mcc": 0.40440852589612253,
+      "brier": 0.17320996272568778,
+      "log_loss": 0.5288748268963884,
+      "confusion_matrix": [
+        [
+          15408,
+          3283
+        ],
+        [
+          2076,
+          3233
+        ]
+      ]
+    },
+    "cv": {
+      "f1": {
+        "mean": 0.5468374888999943,
+        "std": 0.007782275661143923
+      },
+      "precision": {
+        "mean": 0.4962234488821626,
+        "std": 0.008591270417626177
+      },
+      "recall": {
+        "mean": 0.6089665179450656,
+        "std": 0.006420548526999231
+      },
+      "roc_auc": {
+        "mean": 0.7838635629542786,
+        "std": 0.004066952251787583
+      },
+      "average_precision": {
+        "mean": 0.5493995003621405,
+        "std": 0.010331958256616026
+      },
+      "accuracy": {
+        "mean": 0.7767083333333332,
+        "std": 0.004700768258723471
+      }
+    },
+    "train_cv": {
+      "f1": {
+        "mean": 0.5839511837342336,
+        "std": 0.003022040838048529
+      },
+      "precision": {
+        "mean": 0.5296062487359423,
+        "std": 0.0030555384392307117
+      },
+      "recall": {
+        "mean": 0.6507811531341111,
+        "std": 0.006670423521206606
+      },
+      "roc_auc": {
+        "mean": 0.843577794803959,
+        "std": 0.002247225984335298
+      },
+      "average_precision": {
+        "mean": 0.6231823023627386,
+        "std": 0.002783830697521176
+      },
+      "accuracy": {
+        "mean": 0.7948750000000001,
+        "std": 0.0015844294451526147
+      }
+    },
+    "overfit_gap": {
+      "f1": 0.03711369483423932,
+      "precision": 0.03338279985377973,
+      "recall": 0.04181463518904549,
+      "roc_auc": 0.05971423184968039,
+      "average_precision": 0.07378280200059817,
+      "accuracy": 0.018166666666666886
+    },
+    "oof_threshold": {
+      "best_threshold": 0.5278682477346927,
+      "best_f1": 0.5488032743126613,
+      "precision": 0.5200674536256323,
+      "recall": 0.5809003578828404,
+      "mcc": 0.4124804737218073,
+      "balanced_accuracy": 0.7143172807551273,
+      "default_0_5_f1": 0.5468076109936575,
+      "f1_gain_over_0_5": 0.0019956633190038042
+    },
+    "tree_audit": {
+      "mean_tree_depth": 14.9925,
+      "median_tree_depth": 15.0,
+      "max_tree_depth": 15,
+      "mean_tree_leaves": 253.305,
+      "total_nodes": 202244,
+      "singleton_leaf_fraction": 0.0,
+      "small_leaf_fraction": 0.0
+    },
+    "oob_metrics": null,
+    "kb_audit": {
+      "primary_train_cv_gap": 0.03711369483423932,
+      "overfit_warning": false,
+      "calibration_warning": true,
+      "threshold_opportunity": false,
+      "notes": [
+        "class_weight='balanced_subsample' boosts default-0.5 F1/recall but inflates predicted probabilities (OOF Brier=0.1732). Before M1 soft-voting ensemble, calibrate probabilities or tune threshold on unweighted RF."
+      ]
+    },
+    "runtime_seconds": 164.7417475000002,
+    "fold_fit_seconds": 15.866347789764404,
+    "prediction_seconds": 0.6975878999983252,
+    "mean_tree_depth": 14.9925,
+    "mean_tree_leaves": 253.305,
+    "training_oob_accuracy": null,
+    "versions": {
+      "python": "3.12.10",
+      "scikit_learn": "1.9.1",
+      "pandas": "3.1.1"
+    },
+    "artifacts": [
+      "config.json",
+      "worker.log",
+      "folds.csv",
+      "cv_results.csv",
+      "precision_recall.csv",
+      "roc_curve.csv",
+      "calibration_curve.csv",
+      "threshold_sweep.csv",
+      "oof_probabilities.csv",
+      "feature_importance.csv",
+      "mdi_importance.csv",
+      "model.joblib",
+      "summary.json"
+    ]
+  },
+  "worker_pid": 42252,
+  "runtime_seconds": 164.75071670000034
+}
