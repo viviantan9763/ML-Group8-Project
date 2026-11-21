@@ -1,0 +1,229 @@
+{
+  "experiment": "E2_fixed_weight_soft_voting",
+  "hypothesis": "Giving RF twice GB's voting weight may increase F1.",
+  "weights": {
+    "E1_equal_1to1": [
+      1,
+      1
+    ],
+    "E2_weighted_2to1": [
+      2,
+      1
+    ]
+  },
+  "protocol": {
+    "cv": "get_cv()",
+    "folds": 3,
+    "same_folds_for_all": true,
+    "test_set_used": false,
+    "positive_class": 1,
+    "primary_metric": "f1"
+  },
+  "training_fingerprint_local": "56cd3de80c5c60ee6b7be5c435e4f107fb9b9482c6d7c376810e1030711c5e36",
+  "measured": {
+    "RF": {
+      "model": "RF",
+      "fold_count": 3,
+      "f1_folds": [
+        0.5518134715025906,
+        0.5400669930430302,
+        0.5561914672216441
+      ],
+      "f1_mean": 0.5493573105890883,
+      "f1_std": 0.006808044834799462,
+      "precision_folds": [
+        0.509325681492109,
+        0.4964471814306016,
+        0.5154291224686596
+      ],
+      "precision_mean": 0.50706732846379,
+      "precision_std": 0.007912169537847593,
+      "recall_folds": [
+        0.6020350480497456,
+        0.592090395480226,
+        0.603954802259887
+      ],
+      "recall_mean": 0.5993600819299528,
+      "recall_std": 0.005199847424995304,
+      "roc_auc_folds": [
+        0.7869039800722858,
+        0.7784324981182722,
+        0.7880206491280572
+      ],
+      "roc_auc_mean": 0.7844523757728717,
+      "roc_auc_std": 0.004281038244576471,
+      "brier_folds": [
+        0.16676526256165095,
+        0.1715827533412595,
+        0.16795591530537904
+      ],
+      "brier_mean": 0.1687679770694298,
+      "brier_std": 0.0020488431832586754,
+      "mean_fit_seconds": 41.542284886042275,
+      "mean_score_seconds": 2.49042018254598
+    },
+    "GB_balanced": {
+      "model": "GB_balanced",
+      "fold_count": 3,
+      "f1_folds": [
+        0.5409560413163584,
+        0.5331412103746398,
+        0.545101842870999
+      ],
+      "f1_mean": 0.5397330315206658,
+      "f1_std": 0.004958897535307046,
+      "precision_folds": [
+        0.4703425229741019,
+        0.46365914786967416,
+        0.47748513169073914
+      ],
+      "precision_mean": 0.47049560084483844,
+      "precision_std": 0.00564547203700863,
+      "recall_folds": [
+        0.6365178066704352,
+        0.6271186440677966,
+        0.6350282485875707
+      ],
+      "recall_mean": 0.6328882331086009,
+      "recall_std": 0.004124788002260075,
+      "roc_auc_folds": [
+        0.7834023685253594,
+        0.7743158219296098,
+        0.78676333759556
+      ],
+      "roc_auc_mean": 0.7814938426835097,
+      "roc_auc_std": 0.005257820507287228,
+      "brier_folds": [
+        0.17969140129864167,
+        0.18319450428861234,
+        0.17872098806345146
+      ],
+      "brier_mean": 0.18053563121690183,
+      "brier_std": 0.001921393586325397,
+      "mean_fit_seconds": 27.381444374720257,
+      "mean_score_seconds": 0.6028689543406168
+    },
+    "E1_equal_1to1": {
+      "model": "E1_equal_1to1",
+      "fold_count": 3,
+      "f1_folds": [
+        0.5500754906894816,
+        0.534504391468005,
+        0.5464646464646464
+      ],
+      "f1_mean": 0.5436815095407109,
+      "f1_std": 0.006654530842180476,
+      "precision_folds": [
+        0.49569160997732425,
+        0.48081264108352145,
+        0.4940639269406393
+      ],
+      "precision_mean": 0.49018939266716166,
+      "precision_std": 0.006663579654257531,
+      "recall_folds": [
+        0.6178631995477671,
+        0.6016949152542372,
+        0.6112994350282486
+      ],
+      "recall_mean": 0.6102858499434177,
+      "recall_std": 0.006639471379170945,
+      "roc_auc_folds": [
+        0.7869859023778244,
+        0.7783559594090922,
+        0.7895833446690426
+      ],
+      "roc_auc_mean": 0.7849750688186531,
+      "roc_auc_std": 0.004799036962131396,
+      "brier_folds": [
+        0.17223427167716443,
+        0.176430011543948,
+        0.17244157399496124
+      ],
+      "brier_mean": 0.17370195240535788,
+      "brier_std": 0.0019308846954137768,
+      "mean_fit_seconds": 32.07061958312988,
+      "mean_score_seconds": 1.8542017936706543
+    },
+    "E2_weighted_2to1": {
+      "model": "E2_weighted_2to1",
+      "fold_count": 3,
+      "f1_folds": [
+        0.5500253936008126,
+        0.5375031782354437,
+        0.5493606138107416
+      ],
+      "f1_mean": 0.5456297285489994,
+      "f1_std": 0.005752744159175102,
+      "precision_folds": [
+        0.49930843706777317,
+        0.4886731391585761,
+        0.5018691588785047
+      ],
+      "precision_mean": 0.496616911701618,
+      "precision_std": 0.005713549142735414,
+      "recall_folds": [
+        0.6122102882984737,
+        0.5971751412429378,
+        0.6067796610169491
+      ],
+      "recall_mean": 0.6053883635194536,
+      "recall_std": 0.006216413397359201,
+      "roc_auc_folds": [
+        0.7874125697122079,
+        0.7788550933609018,
+        0.7896140871126588
+      ],
+      "roc_auc_mean": 0.7852939167285894,
+      "roc_auc_std": 0.004640797667523194,
+      "brier_folds": [
+        0.17019036636021956,
+        0.17460123274949893,
+        0.17074704827855516
+      ],
+      "brier_mean": 0.1718462157960912,
+      "brier_std": 0.0019613027132875044,
+      "mean_fit_seconds": 31.262802124023438,
+      "mean_score_seconds": 1.8882996241251628
+    }
+  },
+  "paired_differences": {
+    "GB_balanced": {
+      "paired_f1_differences_vs_rf": [
+        -0.010857430186232198,
+        -0.00692578266839039,
+        -0.011089624350645089
+      ],
+      "mean_f1_difference_vs_rf": -0.009624279068422559,
+      "folds_better_than_rf": 0,
+      "folds_equal_to_rf": 0,
+      "total_folds": 3
+    },
+    "E1_equal_1to1": {
+      "paired_f1_differences_vs_rf": [
+        -0.0017379808131090524,
+        -0.0055626015750251945,
+        -0.009726820756997712
+      ],
+      "mean_f1_difference_vs_rf": -0.00567580104837732,
+      "folds_better_than_rf": 0,
+      "folds_equal_to_rf": 0,
+      "total_folds": 3
+    },
+    "E2_weighted_2to1": {
+      "paired_f1_differences_vs_rf": [
+        -0.0017880779017780402,
+        -0.0025638148075864953,
+        -0.006830853410902504
+      ],
+      "mean_f1_difference_vs_rf": -0.0037275820400890134,
+      "folds_better_than_rf": 0,
+      "folds_equal_to_rf": 0,
+      "total_folds": 3
+    }
+  },
+  "limitations": [
+    "2:1 was a predeclared single alternative, not a large parameter sweep.",
+    "Training CV was already used for base-model tuning and model selection.",
+    "This is not the independent held-out test-set performance."
+  ]
+}
