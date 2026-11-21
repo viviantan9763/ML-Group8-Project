@@ -1,0 +1,103 @@
+{
+  "dataset": "official",
+  "model": {
+    "n_estimators": 100,
+    "criterion": "gini",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "bootstrap": true,
+    "oob_score": false,
+    "class_weight": null,
+    "max_samples": null,
+    "ccp_alpha": 0.0,
+    "random_state": 42,
+    "n_jobs": 1
+  },
+  "cv": {
+    "folds": 3,
+    "shuffle": true,
+    "seed": 42,
+    "primary": "average_precision",
+    "secondary": [
+      "precision",
+      "recall",
+      "roc_auc",
+      "accuracy"
+    ]
+  },
+  "fit_limit": 350,
+  "search": {
+    "space": {
+      "n_estimators": [
+        500
+      ],
+      "max_depth": [
+        12,
+        18,
+        24,
+        null
+      ],
+      "min_samples_leaf": [
+        4,
+        8,
+        12,
+        16,
+        24
+      ],
+      "max_features": [
+        "sqrt",
+        0.2,
+        0.25,
+        0.35,
+        0.5
+      ],
+      "class_weight": [
+        null
+      ],
+      "max_samples": [
+        0.55,
+        0.65,
+        0.8,
+        null
+      ]
+    },
+    "iterations": 24,
+    "method": "random",
+    "jobs": 4,
+    "verbosity": 3,
+    "seed": 42,
+    "errors": "raise",
+    "refit": "primary"
+  },
+  "dataset_snapshot": {
+    "name": "UCI Default of Credit Card Clients (#350)",
+    "fingerprint": "eccc27da46cc307e54a69d4b457b22ba79987ba6f9e21f38b2b2368b875f5a79",
+    "pipeline": "M2 shared pipeline: one-hot categorical predictors, numeric passthrough, ID excluded",
+    "pipeline_hash": "ab48cfad91465ea04146e984369620958310d485f0f18d7a5812e4210e4ca6e7",
+    "split_id": "5138b7fe5d32154e9cbebc15387073794471db6e1308b9ead684f5124503d89a",
+    "rows": 30000,
+    "columns": 25,
+    "features": 23,
+    "target": "default_next_month",
+    "positive_class": 1,
+    "missing": 0,
+    "train_rows": 24000,
+    "test_rows": 6000,
+    "distribution": {
+      "0": 23364,
+      "1": 6636
+    },
+    "train_distribution": {
+      "0": 18691,
+      "1": 5309
+    },
+    "test_distribution": {
+      "0": 4673,
+      "1": 1327
+    }
+  }
+}
