@@ -1,6 +1,6 @@
 
 """
-Gradient Boosting Baseline, Tuning and Supporting Evaluation
+M4 - Gradient Boosting Baseline, Tuning and Supporting Evaluation
 
 Uses the shared preprocessing pipeline provided by M2.
 The final test set is reserved.

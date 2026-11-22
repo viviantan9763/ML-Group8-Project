@@ -1,6 +1,6 @@
 
 """
-Gradient Boosting Feature Importance Visualisation
+M4 - Gradient Boosting Feature Importance Visualisation
 
 Creates:
 1. Built-in Feature Importance chart.

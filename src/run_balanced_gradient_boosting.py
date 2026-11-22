@@ -1,6 +1,6 @@
 
 """
-Balanced Gradient Boosting Baseline, Tuning and Evaluation
+M4 - Balanced Gradient Boosting Baseline, Tuning and Evaluation
 
 Uses balanced sample weights inside each training fold.
 The final test set is reserved.
