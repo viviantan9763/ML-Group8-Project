@@ -1,5 +1,3 @@
-to a public repository. Original dataset is CC BY 4.0: attribute its creators and UCI source in the report/README.
-=======
 # Credit Card Default Prediction — Machine Learning Group Project
 
 ## Project Overview
@@ -79,9 +77,15 @@ Clone this GitHub repository and open the project folder in VS Code.
 
 **2. Set up a Python environment**
 
-Create or select a Python virtual environment and install the dependencies:
+**2. Set up a Python environment**
 
-`python -m pip install -r requirements.txt`
+Ensure that Python is installed on your computer. Open a terminal in the project's root directory and install the required Python dependencies using the provided `requirements.txt` file:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+This command installs the libraries required to run the preprocessing pipeline, machine learning models, evaluation scripts, and Jupyter Notebooks.
 
 **3. Verify shared preprocessing**
 
