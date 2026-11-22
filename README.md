@@ -57,17 +57,40 @@ All models use the same training and testing partitions. Model selection and hyp
 
 ## Project Structure
 
+## Project Structure and File Descriptions
+
+The project repository is organised into the following folders and files to facilitate code review, reproducibility, and evaluation.
+
 | Folder / File | Description |
 |---|---|
-| `data/raw/` | Original dataset |
-| `data/processed/` | Cleaned dataset |
-| `notebooks/` | Jupyter Notebooks for analysis and experiments |
-| `src/` | Python source code for preprocessing, modelling and evaluation |
-| `figures/` | EDA and evaluation visualisations |
-| `results/` | Data audit, cross-validation results and model performance metrics |
-| `report/` | Project report and related documents |
-| `requirements.txt` | Python dependencies |
-| `README.md` | Project overview and setup instructions |
+| `data/raw/` | Contains the original UCI Credit Card Default dataset used in this project. |
+| `data/processed/` | Contains the prepared datasets, including the full dataset without the ID column, training dataset (24,000 records), and testing dataset (6,000 records). |
+| `notebooks/` | Contains Jupyter Notebooks for exploratory data analysis, preprocessing, model training, ensemble learning, and final evaluation. |
+| `src/` | Contains Python source code for data preprocessing, Logistic Regression, Random Forest, Gradient Boosting, ensemble learning, model evaluation, and testing. |
+| `results/` | Contains saved experimental results, cross-validation metrics, hyperparameter tuning results, model comparisons, and final evaluation outputs in CSV and JSON formats. |
+| `figures/` | Contains visualisations generated during exploratory data analysis and model evaluation. |
+| `artifacts/` | Contains saved trained machine learning models for reuse and evaluation. |
+| `m3_workspace/` | Contains supporting Random Forest experiments, testing scripts, and development records. |
+| `report/` | Contains the final group project report, including methodology, experiments, results, discussions, and references. |
+| `requirements.txt` | Lists the Python libraries and dependencies required to execute the project. |
+| `README.md` | Provides the project overview, dataset information, team responsibilities, repository structure, and setup instructions. |
+
+### Key Submission Files
+
+The primary deliverables can be located as follows:
+
+| Deliverable | Location |
+|---|---|
+| **Python Source Code** | `src/` |
+| **Processed Dataset** | `data/processed/` |
+| **Final Jupyter Notebook** | `notebooks/Group8_Final_ML_ORDERED.ipynb` |
+| **Model Results and Evaluation** | `results/` |
+| **Final Project Report** | `report/` |
+| **Python Dependencies** | `requirements.txt` |
+
+The final Jupyter Notebook consolidates the main machine learning workflow, including exploratory data analysis, preprocessing, base model development, ensemble learning, and final evaluation.
+
+For reproducibility, users should install the dependencies listed in `requirements.txt` before executing the Python scripts or Jupyter Notebooks.
 
 ## Getting Started
 
